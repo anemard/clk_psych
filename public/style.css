@@ -1,0 +1,34 @@
+.app {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+
+/* Footer */
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: aquamarine;
+}
+
+.footer-list {
+    list-style: none;
+}
+
