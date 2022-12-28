@@ -1,8 +1,7 @@
-.app {
+.App {
     margin: 0px;
     padding: 0px;
 }
-
 
 /* Navbar */
 .navbar {
@@ -26,6 +25,10 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: aquamarine;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-list {

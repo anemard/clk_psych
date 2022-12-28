@@ -13,7 +13,8 @@ function Footer() {
                     <li><Link to='/etc'>etc</Link></li>
                 </ul>
                 <ul className='footer-list'>
-                    <li>Designed by an emard</li>
+                    <li><Link to='/signin'>Admin</Link></li>
+                    <li>Website built & designed by an emard</li>
                 </ul>
             </div>
         </>
