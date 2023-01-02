@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { db } from '../database/firebaseconfig'
 import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../database/firebaseconfig'
 
 function Services() {
     const [services, setServices] = useState([]);
     const colRef = collection(db, "clk-services")
-    const isAdmin = false;
+    const [user, setUser] = useState({})
+
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser)
+    } )
 
     const collectServiceData = () => {
         let data = []
@@ -47,8 +53,9 @@ function Services() {
 
     return (
         <>
+        <div className='services-container'>
             <h1>Services</h1>
-            {isAdmin ? (
+            {user ? (
                         <div>
                             <form className='addService'>
                                 <label>Service:</label>
@@ -71,6 +78,7 @@ function Services() {
                             ))}
                         </ul>
             )}
+        </div>
         </>
     )
 }

@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { db } from '../database/firebaseconfig'
 import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../database/firebaseconfig'
 
 function Publications() {
   const [publications, setPublications] = useState([]);
   const colRef = collection(db, "clk-publications")
-  const isAdmin = false;
+  const [user, setUser] = useState({})
+
+  onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser)
+  } )
 
   const getPublications = () => {
     let data = []
@@ -51,8 +57,9 @@ function Publications() {
 
   return (
     <>
+    <div className='publications-container'>
       <h1>Publications</h1>
-      {isAdmin ? (
+      {user ? (
         <>
           <form className='addPublication'>
             <label>Title:</label>
@@ -73,7 +80,7 @@ function Publications() {
           </ul>
         </>
       ) : (
-      <ul className="PublicationsList">
+      <ul className="publicationsList">
         {publications.map((publication) => (
           <li className="publication-item" key={publication.id}>
             <a href={publication.link}>{publication.title}</a>
@@ -81,6 +88,7 @@ function Publications() {
         ))}
       </ul>
       )}
+    </div>
     </>
   )
 }

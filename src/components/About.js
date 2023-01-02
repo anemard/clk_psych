@@ -27,11 +27,11 @@ function About() {
     return (
         <>
             <div className="about-container">
-                <h1>About</h1>
                 <div className='about'>
                     <div className='headshot-div'><img src={headshot} className="headshot" /></div>
                 {about.map((paragraph) => (
                     <div className="about-content" key={paragraph.id}>
+                        <h1>Cary Klemmer, PhD, LCSW</h1>
                         <p>{paragraph.p1}</p>
                         <p>{paragraph.p2}</p>
                         <p>{paragraph.p3}</p>
