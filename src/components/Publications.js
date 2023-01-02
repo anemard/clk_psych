@@ -65,7 +65,7 @@ function Publications() {
             {publications.map((publication) => (
               <div key={publication.id}>
                 <li className="publication-item">
-                  <a href={publication.link}>{publication.title}</a>
+                  <a href={publication.link} target="_blank">{publication.title}</a>
                 </li>
                 <button onClick={(evt) => {deletePublicationClick(evt, publication.id)}}>remove</button>
               </div>

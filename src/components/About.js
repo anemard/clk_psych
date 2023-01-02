@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { db } from '../database/firebaseconfig'
 import { collection, getDocs } from 'firebase/firestore'
+import { BrowserRouter } from 'react-router-dom'
+import headshot from '../img/Cary-Klemmer-BW.jpeg'
 
 function About() {
     const [about, setAbout] = useState([]);
@@ -24,15 +26,18 @@ function About() {
 
     return (
         <>
-            <div className="about">
+            <div className="about-container">
                 <h1>About</h1>
+                <div className='about'>
+                    <div className='headshot-div'><img src={headshot} className="headshot" /></div>
                 {about.map((paragraph) => (
-                    <div className="service" key={paragraph.id}>
+                    <div className="about-content" key={paragraph.id}>
                         <p>{paragraph.p1}</p>
                         <p>{paragraph.p2}</p>
                         <p>{paragraph.p3}</p>
                     </div>
                 ))}
+                </div>
             </div>
         </>
     )

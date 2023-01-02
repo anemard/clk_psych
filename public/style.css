@@ -1,6 +1,9 @@
 .App {
     margin: 0px;
     padding: 0px;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 8rem;
 }
 
 /* Navbar */
@@ -21,17 +24,39 @@
 /* Footer */
 
 .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     background-color: aquamarine;
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 8rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .footer-list {
     list-style: none;
 }
 
+
+/* ABOUT */
+.about {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-content {
+    margin: 0vw 12vw 0vw 3vw
+}
+
+.headshot-div {
+    margin: 0vw 0vw 3vh 12vw;
+}
+
+.headshot {
+    width: 35vw;
+}
