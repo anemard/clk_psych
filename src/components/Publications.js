@@ -80,10 +80,13 @@ function Publications() {
           </ul>
         </>
       ) : (
+
+        // <a target="_blank" rel="noopener noreferrer" href="https://past-stonks.herokuapp.com/">Stonks!</a>
+
       <ul className="publicationsList">
         {publications.map((publication) => (
           <li className="publication-item" key={publication.id}>
-            <a href={publication.link}>{publication.title}</a>
+            <a target='_blank' rel="noopener noreferrer" href={publication.link}>{publication.title}</a>
           </li>
         ))}
       </ul>
